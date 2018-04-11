@@ -4,79 +4,79 @@ import PerfectHTTP
 
 
 public struct AuthConfig: Codable {
-    var baseURL:String
-    var mySqlConfig:MySQLConfig
-    var smtpConfig:SmtpConfig
+    public var baseURL:String
+    public var mySqlConfig:MySQLConfig
+    public var smtpConfig:SmtpConfig
     
     // Addition of an Approver Route
-    var approverConfig:EmailRoutePostConfig?
+    public var approverConfig:EmailRoutePostConfig?
     
     // Routing Config
-    var webIndexConfig:BaseHandlerConfig
-    var webRegisterConfig:BaseHandlerConfig
-    var webRegisterPostConfig:EmailRoutePostConfig
+    public var webIndexConfig:BaseHandlerConfig
+    public var webRegisterConfig:BaseHandlerConfig
+    public var webRegisterPostConfig:EmailRoutePostConfig
 
-    var webRegisterApproveConfig:EmailRoutePostConfig
-    var webRegisterVerifyConfig:BaseHandlerConfig
-    var webRegisterCompleteConfig:TryAgainConfig
-    var webLoginConfig:BaseHandlerConfig
-    var webLoginPostConfig:BaseHandlerConfig
-    var webResetPasswordConfig:BaseHandlerConfig
-    var webResetPasswordPostConfig:EmailRoutePostConfig
-    var webResetPasswordVerifyConfig:BaseHandlerConfig
-    var webResetPasswordCompleteConfig:TryAgainConfig
+    public var webRegisterApproveConfig:EmailRoutePostConfig
+    public var webRegisterVerifyConfig:BaseHandlerConfig
+    public var webRegisterCompleteConfig:TryAgainConfig
+    public var webLoginConfig:BaseHandlerConfig
+    public var webLoginPostConfig:BaseHandlerConfig
+    public var webResetPasswordConfig:BaseHandlerConfig
+    public var webResetPasswordPostConfig:EmailRoutePostConfig
+    public var webResetPasswordVerifyConfig:BaseHandlerConfig
+    public var webResetPasswordCompleteConfig:TryAgainConfig
 
     
     
-    struct MySQLConfig:Codable {
-        var mysqlUser:String
-        var mysqlHost:String
-        var mysqlPwd:String
-        var mysqlDBname:String
-        var mysqlPort:Int
+    public struct  MySQLConfig:Codable {
+        public var mysqlUser:String
+        public var mysqlHost:String
+        public var mysqlPwd:String
+        public var mysqlDBname:String
+        public var mysqlPort:Int
     }
     
-    struct SmtpConfig:Codable {
-        var mailUser:String
-        var mailServer:String
-        var mailpass:String
-        var mailFromAddress:String
-        var mailFromName:String
+    public struct  SmtpConfig:Codable {
+        public var mailUser:String
+        public var mailServer:String
+        public var mailpass:String
+        public var mailFromAddress:String
+        public var mailFromName:String
     }
     
-    struct BaseHandlerConfig:Codable, BaseHandlerCFG {
-        var templatePath:String
-        var context:[String:String]
-        var redirectPath: String?
+    public struct  BaseHandlerConfig:Codable, BaseHandlerCFG {
+        public var templatePath:String
+        public var context:[String:String]
+        public var redirectPath: String?
     }
     
     public struct MailConfig:Codable {
-        let htmlTemplatePath:String
-        let txtTemplatePath:String
-        let subject:String
+        public let htmlTemplatePath:String
+        public let txtTemplatePath:String
+        public let subject:String
     }
     
-    struct EmailRoutePostConfig:Codable, EmailRoutePostCfg {
-        var baseURL:String?
-        var approverName: String?
-        var approverEmail: String?
-        var mailConfig: AuthConfig.MailConfig?
-        var templatePath: String
-        var context: [String : String]
+    public struct  EmailRoutePostConfig:Codable, EmailRoutePostCfg {
+        public var baseURL:String?
+        public var approverName: String?
+        public var approverEmail: String?
+        public var mailConfig: AuthConfig.MailConfig?
+        public var templatePath: String
+        public var context: [String : String]
         
-        var redirectPath: String?
-        var errorTemplateConfig: AuthConfig.BaseHandlerConfig?
+        public var redirectPath: String?
+        public var errorTemplateConfig: AuthConfig.BaseHandlerConfig?
     }
     
-    struct TryAgainConfig:Codable, TryAgainCFG {
-        var tryAgainConfig: AuthConfig.BaseHandlerConfig
-        var templatePath: String
-        var context: [String : String]
-        var redirectPath: String?
+    public struct  TryAgainConfig:Codable, TryAgainCFG {
+        public var tryAgainConfig: AuthConfig.BaseHandlerConfig
+        public var templatePath: String
+        public var context: [String : String]
+        public var redirectPath: String?
     }
     
     
-    init?(configFile:String) {
+    public init?(configFile:String) {
         
         if (FileManager.default.fileExists(atPath: configFile)) {
             let fileURL = URL(fileURLWithPath:configFile)
