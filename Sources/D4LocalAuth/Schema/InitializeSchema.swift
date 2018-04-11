@@ -13,7 +13,7 @@ import Foundation
 
 
 extension AuthConfig {
-    mutating func setup() {
+    public mutating func setup() {
         
         if let approveCfg = self.approverConfig {
             self.webRegisterPostConfig = approveCfg
