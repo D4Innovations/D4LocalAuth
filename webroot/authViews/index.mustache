@@ -1,0 +1,19 @@
+{{>../header}} 
+{{>authHead}}
+<div class="card card-outline-secondary">
+    <div class="card-header">
+        <h3 class="mb-0">
+            {{#authenticated}}Hello {{username}}{{/authenticated}}
+            {{^authenticated}}Login or Register{{/authenticated}}
+        </h3>
+    </div>
+    <div class="card-body">
+        {{#authenticated}}
+        <a href="/auth/logout" class="btn btn-info btn-teal btn-lg float-right">Logout</a> {{/authenticated}} {{^authenticated}}
+        <a href="/auth/login" class="btn btn-info btn-teal btn-lg float-left">Login</a>
+        <a href="/auth/register" class="btn btn-info btn-teal btn-lg float-right">Register</a> {{/authenticated}}
+        </form>
+    </div>
+</div>
+{{>authFoot}} 
+{{>../footer}}

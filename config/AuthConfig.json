@@ -1,0 +1,163 @@
+{
+  "httpPort" : null,
+  "baseURL" : "",
+  "mySqlConfig" : {
+    "mysqlUser" : "",
+    "mysqlHost" : "",
+    "mysqlPwd" : "",
+    "mysqlDBname" : "",
+    "mysqlPort" : 3306
+  },
+  "smtpConfig" : {
+    "mailUser" : "",
+    "mailServer" : "",
+    "mailpass" : "",
+    "mailFromAddress" : "",
+    "mailFromName" : ""
+  },
+  "approverConfig" : {
+    "approverName" : "",
+    "approverEmail" : "",
+    "templatePath" : "authViews/msg",
+    "context" : {
+      "title" : "Welcome",
+      "msgTitle" : "Approval Requested",
+      "msgBody" : "Your registration info has been sent for approval.  Once approved you will receive an email with instructions to complete your signup!"
+    },
+    "mailConfig" : {
+      "htmlTemplatePath" : "authViews/regApproveReqMailBodyHTML.mustache",
+      "txtTemplatePath" : "authViews/regApproveReqMailBodyText.mustache",
+      "subject" : "Approval Request"
+    },
+    "errorTemplateConfig" : {
+      "templatePath" : "authViews/register",
+      "context" : {
+        "title" : "Try Again"
+      }
+    }
+  },
+  "webIndexConfig" : {
+    "templatePath" : "authViews/index",
+    "context" : {
+      "title" : "Login or Register",
+      "title2" : "Welcome"
+    }
+  },
+  "webRegisterConfig" : {
+    "templatePath" : "authViews/register",
+    "context" : {
+      "title" : "Register"
+    }
+  },
+  "webRegisterPostConfig" : {
+    "templatePath" : "authViews/msg",
+    "context" : {
+      "title" : "Welcome",
+      "msgTitle" : "Registration Success",
+      "msgBody" : "Check your email for instructions on completing your registration."
+    },
+    "mailConfig" : {
+      "htmlTemplatePath" : "authViews/registerMailBodyHTML.mustache",
+      "txtTemplatePath" : "authViews/registerMailBodyText.mustache",
+      "subject" : "Welcome to your account"
+    },
+    "errorTemplateConfig" : {
+      "templatePath" : "authViews/register",
+      "context" : {
+        "title" : "Try Again"
+      }
+    }
+  },
+  "webRegisterApproveConfig" : {
+    "templatePath" : "authViews/msg",
+    "context" : {
+      "title" : "Authorized",
+      "msgTitle" : "Approved!",
+      "msgBody" : "An email has been sent to the user to complete the registration process."
+    },
+    "mailConfig" : {
+      "htmlTemplatePath" : "authViews/registerMailBodyHTML.mustache",
+      "txtTemplatePath" : "authViews/registerMailBodyText.mustache",
+      "subject" : "Welcome to your account"
+    }
+  },
+  "webRegisterVerifyConfig" : {
+    "templatePath" : "authViews/registerComplete",
+    "context" : {
+      "title" : "Set Password"
+    }
+  },
+  "webRegisterCompleteConfig" : {
+    "templatePath" : "authViews/msg",
+    "context" : {
+      "title" : "Registration Complete",
+      "msgTitle" : "Account Validated and Completed",
+      "msgBody" : ""
+    },
+    "tryAgainConfig" : {
+      "templatePath" : "authViews/registerComplete",
+      "context" : {
+        "title" : "Try Again",
+        "msgBody" : "<p>Account Validation Error: The passwords must not be empty, and must match.</p>"
+      }
+    }
+  },
+  "webLoginConfig" : {
+    "templatePath" : "authViews/login",
+    "context" : {
+      "title" : "Login"
+    }
+  },
+  "webLoginPostConfig" : {
+    "templatePath" : "authViews/login",
+    "context" : {
+      "title" : "Login Try Again"
+    }
+  },
+  "webResetPasswordConfig" : {
+    "templatePath" : "authViews/resetPassword",
+    "context" : {
+      "title" : "Reset Password"
+    }
+  },
+  "webResetPasswordPostConfig" : {
+    "templatePath" : "authViews/msg",
+    "context" : {
+      "title" : "Reset Password",
+      "msgTitle" : "You are resetting your password.",
+      "msgBody" : "Check your email for an email from us. It contains instructions to reset your password!"
+    },
+    "mailConfig" : {
+      "htmlTemplatePath" : "authViews/resetPasswordMailBodyHTML.mustache",
+      "txtTemplatePath" : "authViews/resetPasswordMailBodyText.mustache",
+      "subject" : "Password reset request"
+    },
+    "errorTemplateConfig" : {
+      "templatePath" : "authViews/resetPassword",
+      "context" : {
+        "title" : "Try Again"
+      }
+    }
+  },
+  "webResetPasswordVerifyConfig" : {
+    "templatePath" : "authViews/resetPasswordComplete",
+    "context" : {
+      "title" : "Password Reset"
+    }
+  },
+  "webResetPasswordCompleteConfig" : {
+    "templatePath" : "authViews/msg",
+    "context" : {
+      "title" : "Password Reset",
+      "msgTitle" : "Password Reset was Successful",
+      "msgBody" : ""
+    },
+    "tryAgainConfig" : {
+      "templatePath" : "authViews/resetPasswordComplete",
+      "context" : {
+        "title" : "Try Again",
+        "msgBody" : "<p>Password Reset Error: The passwords must not be empty, and must match.</p>"
+      }
+    }
+  }
+}
