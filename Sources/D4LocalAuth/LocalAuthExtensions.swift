@@ -1,6 +1,6 @@
 import Foundation
 
-extension Dictionary  {
+internal extension Dictionary  {
     
     /// SwifterSwift: Merge the keys/values of two dictionaries.
     /// https://github.com/SwifterSwift/SwifterSwift/blob/master/Sources/Extensions/SwiftStdlib/DictionaryExtensions.swift
@@ -14,7 +14,7 @@ extension Dictionary  {
     ///   - lhs: dictionary
     ///   - rhs: dictionary
     /// - Returns: An dictionary with keys and values from both.
-    public static func + (lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] {
+    internal static func + (lhs: [Key: Value], rhs: [Key: Value]) -> [Key: Value] {
         var result = lhs
         rhs.forEach { result[$0] = $1 }
         return result
@@ -31,12 +31,12 @@ extension Dictionary  {
     /// - Parameters:
     ///   - lhs: dictionary
     ///   - rhs: dictionary
-    public static func += (lhs: inout [Key: Value], rhs: [Key: Value]) {
+    internal static func += (lhs: inout [Key: Value], rhs: [Key: Value]) {
         rhs.forEach { lhs[$0] = $1}
     }
 }
 
-extension JSONEncoder {
+internal extension JSONEncoder {
     func encodeJSONWithErrors<T:Encodable>(_ value: T)  -> Data?  {
         
         func printContext(_ ctx:EncodingError.Context) {
@@ -64,7 +64,7 @@ extension JSONEncoder {
     }
 }
 
-extension JSONDecoder {
+internal extension JSONDecoder {
     func decodeJSONWithErrors<T:Decodable>(data:Data) -> T? {
         
         func printContext(_ ctx:DecodingError.Context) {
