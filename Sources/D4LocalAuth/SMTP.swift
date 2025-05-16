@@ -23,7 +23,7 @@ public class Utility {
 
 		if html.isEmpty && text.isEmpty { return }
 
-		let client = SMTPClient(url: SMTPConfig.mailserver, username: SMTPConfig.mailuser, password: SMTPConfig.mailpass)
+		let client = SMTPClient(url: SMTPConfig.mailserver, username: SMTPConfig.mailuser, password: SMTPConfig.mailpass,requiresTLSUpgrade:true)
 
 		let email = EMail(client: client)
 		email.subject = subject
